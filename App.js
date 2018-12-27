@@ -10,7 +10,7 @@ import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 import Home from './components/tabbars/Hone';
 import Me from './components/tabbars/Me';
-import Find from './components/tabbars/Find'
+import Find from './components/tabbars/Find';
 import TabNavigator from 'react-native-tab-navigator';
 
 
@@ -28,6 +28,7 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Text>123</Text>
         <TabNavigator>
           <TabNavigator.Item
             selected={this.state.selectedTab === 'home'}
