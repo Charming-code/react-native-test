@@ -23,7 +23,10 @@ export default class App extends Component {
   constructor(props){
     super(props)
     this.state={
-      selectedTab:'home'
+      selectedTab:'home',
+      homeText:'#494949',
+      findText:'#9b9b9b',
+      meText:'#9b9b9b'
     }
   }
 
@@ -35,9 +38,9 @@ export default class App extends Component {
             selected={this.state.selectedTab === 'home'}
             title="热映"
             // renderIcon={() => <Image source={...} />}
-            renderIcon={() => <Icon name="book" size={15} color="red" />}
+            renderIcon={() => <Icon name="book" size={15} color="#9b9b9b" />}
             // renderSelectedIcon={() => <Image source={...} />}
-            renderSelectedIcon={() => <Icon name="book" size={20} color="red" />}
+            renderSelectedIcon={() => <Icon name="book" size={20} color="#494949" />}
             // badgeText="1"
             onPress={() => this.setState({ selectedTab: 'home' })}
             >
@@ -47,9 +50,9 @@ export default class App extends Component {
             selected={this.state.selectedTab === 'find'}
             title="找片"
             // renderIcon={() => <Image source={...} />}
-            renderIcon={() => <Icon name="eye" size={15} color="red" />}
+            renderIcon={() => <Icon name="eye" size={15} color="#9b9b9b" />}
             // renderSelectedIcon={() => <Image source={...} />}
-            renderSelectedIcon={() => <Icon name="eye" size={20} color="red" />}
+            renderSelectedIcon={() => <Icon name="eye" size={20} color="#494949" />}
             // renderBadge={() => <CustomBadgeView />}
             onPress={() => this.setState({ selectedTab: 'find' })}
             >
@@ -58,10 +61,11 @@ export default class App extends Component {
           <TabNavigator.Item
             selected={this.state.selectedTab === 'me'}
             title="我的"
+            // titleStyle={()=>{return color=(this.state.selectedTab === 'me'?"#494949":"black")}}
             // renderIcon={() => <Image source={...} />}
-            renderIcon={() => <Icon name="user" size={15} color="red" />}
+            renderIcon={() => <Icon name="user" size={15} color="#9b9b9b" />}
             // renderSelectedIcon={() => <Image source={...} />}
-            renderSelectedIcon={() => <Icon name="user" size={20} color="red" />}
+            renderSelectedIcon={() => <Icon name="user" size={20} color="#494949" />}
             // renderBadge={() => <CustomBadgeView />}
             onPress={() => this.setState({ selectedTab: 'me' })}
             >
