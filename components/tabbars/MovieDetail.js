@@ -65,9 +65,9 @@ export default class MovieDetail extends Component {
               }}>{this.state.movieInfo.title}</Text>
               <Text>
                 {this.state.movieInfo.year}/
-                {this.state.movieInfo.genres[0]}/
-                {this.state.movieInfo.genres[1]}/
-                {this.state.movieInfo.genres[2]}
+                {this.state.movieInfo.genres[0]}
+                {this.state.movieInfo.genres[1]==undefined?'':'/'+this.state.movieInfo.genres[2]}
+                {this.state.movieInfo.genres[2]==undefined?'':'/'+this.state.movieInfo.genres[2]}
               </Text>
               <Text>
                 上映时间：{this.state.movieInfo.mainland_pubdate}({this.state.movieInfo.countries})
@@ -78,7 +78,7 @@ export default class MovieDetail extends Component {
             </View>
             <View style={{ backgroundColor: '#ffffff', alignItems: 'center', width: 80, height: 80, marginTop: 30, marginRight: 30 }}>
               <Text>豆瓣评分</Text>
-              <Text>{this.state.movieInfo.rating.average}</Text>
+              <Text>{this.state.movieInfo.rating.average==0?'暂无评分':this.state.movieInfo.rating.average}</Text>
               <Text>{this.state.movieInfo.ratings_count}人</Text>
             </View>
           </View>
