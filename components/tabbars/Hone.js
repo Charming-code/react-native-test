@@ -49,7 +49,11 @@ export default class SampleAppMovies extends Component {
 
     render() {
         if (!this.state.loaded) {
-            return this.renderLoadingView();
+            return (
+                <View style={styles.container}>
+                    <Text>Loading...</Text>
+                </View>
+            )
         }
 
 
@@ -61,16 +65,20 @@ export default class SampleAppMovies extends Component {
                 <View style={{
                     flexDirection: 'row',
                     justifyContent: 'center',
-                    backgroundColor: '#ffffff'
+                    backgroundColor: '#ffffff',
+                    justifyContent: 'space-between'
                 }}>
-                    <Text style={{ lineHeight: 40, color: '#494949' }}>北京</Text>
-                    <View style={styles.locationIcon}></View>
+                    <View style={{flexDirection:'row'}}>
+                        <Text style={{ lineHeight: 40, color: '#494949',marginLeft:10 }}>北京</Text>
+                        <View style={styles.locationIcon}></View>
+                    </View>
+
                     <Text
                         style={{
                             height: 30,
                             paddingLeft: width,
                             paddingRight: width,
-                            marginLeft: 10,
+                            marginRight: 10,
                             lineHeight: 30,
                             color: '#9a9a9a',
                             backgroundColor: '#f5f5f5',
@@ -116,14 +124,6 @@ export default class SampleAppMovies extends Component {
         );
     }
 
-    renderLoadingView() {
-        return (
-            <View style={styles.container}>
-                <Text>Loading movies...</Text>
-            </View>
-        );
-    }
-
     // renderMovie({ item }) {
     //     // { item }是一种“解构”写法，请阅读ES2015语法的相关文档
     //     // item也是FlatList中固定的参数名，请阅读FlatList的相关文档
@@ -149,15 +149,19 @@ export default class SampleAppMovies extends Component {
                 padding: 10,
                 borderColor: '#e4e4e4',
                 borderBottomWidth: 1,
-                backgroundColor: '#ffffff'
+                backgroundColor: '#ffffff',
+                justifyContent: 'space-between'
             }}>
-                <Image source={{ uri: item.images.small }} style={{ width: 100, height: 140, marginRight: 10 }}></Image>
-                <View style={{ width: 160 }}>
-                    <Text style={styles.movieTitle}>{item.title}</Text>
-                    <Text style={{ fontSize: 12 }}>{item.rating.average == 0 ? '暂无评' : item.rating.average}分</Text>
-                    <Text style={{ fontSize: 12 }}><Text>导演：</Text>{item.directors[0].name}</Text>
-                    <Text style={{ fontSize: 12 }}><Text>主演：</Text>{item.casts[0].name}/{item.casts[1].name}/{item.casts[2].name}</Text>
+                <View style={{ flexDirection: 'row' }}>
+                    <Image source={{ uri: item.images.small }} style={{ width: 100, height: 140, marginRight: 10 }}></Image>
+                    <View style={{ width: 160 }}>
+                        <Text style={styles.movieTitle}>{item.title}</Text>
+                        <Text style={{ fontSize: 12 }}>{item.rating.average == 0 ? '暂无评' : item.rating.average}分</Text>
+                        <Text style={{ fontSize: 12 }}><Text>导演：</Text>{item.directors[0].name}</Text>
+                        <Text style={{ fontSize: 12 }}><Text>主演：</Text>{item.casts[0].name}/{item.casts[1].name}/{item.casts[2].name}</Text>
+                    </View>
                 </View>
+
                 <View style={{ width: 90, height: 110, justifyContent: "center", alignItems: "center" }}>
                     <Text style={{ color: '#fe6778', fontSize: 12, marginBottom: 5 }}>{item.collect_count > 10000 ? Math.floor(item.collect_count / 1000) / 10 + '万' : item.collect_count}人看过</Text>
                     <Text style={styles.buy}>购买</Text>
@@ -170,8 +174,6 @@ export default class SampleAppMovies extends Component {
 var styles = StyleSheet.create({
     container: {
         flex: 1,
-        flexDirection: "row",
-        justifyContent: "center",
         alignItems: "center",
         backgroundColor: "#F5FCFF"
     },
@@ -197,7 +199,7 @@ var styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderRightWidth: 1,
         borderColor: 'black',
-        transform: [{ rotate: '45deg' }, { translateX: 17 }, { translateY: 6 }]
+        transform: [{ rotate: '45deg' }, { translateX: 17 }, { translateY: 6 }],
     },
     rightContainer: {
         flex: 1
