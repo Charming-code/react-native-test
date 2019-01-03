@@ -43,6 +43,7 @@ export default class SampleAppMovies extends Component {
             data: this.state.data.concat(responseData.subjects),
             loaded: true
         });
+        // console.warn(this.state.data)
 
     }
 
@@ -158,7 +159,7 @@ export default class SampleAppMovies extends Component {
                         <Text style={styles.movieTitle}>{item.title}</Text>
                         <Text style={{ fontSize: 12 }}>{item.rating.average == 0 ? '暂无评' : item.rating.average}分</Text>
                         <Text style={{ fontSize: 12 }}><Text>导演：</Text>{item.directors[0].name}</Text>
-                        <Text style={{ fontSize: 12 }}><Text>主演：</Text>{item.casts[0].name}/{item.casts[1].name}/{item.casts[2].name}</Text>
+                        <Text style={{ fontSize: 12 }}><Text>{item.casts==''?'':'主演：'}</Text>{item.casts==''?'':item.casts[0].name}{item.casts[1]==undefined?'':'/'+item.casts[1].name}{item.casts[2]==undefined?'':'/'+item.casts[2].name}</Text>
                     </View>
                 </View>
 

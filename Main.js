@@ -20,6 +20,9 @@ export default class Main extends Component {
     this.state = {}
   }
 
+  
+
+
   render() {
     return <Router sceneStyle={{ backgroundColor: 'white' }}>
       <Stack key="root">
@@ -33,7 +36,7 @@ export default class Main extends Component {
           key="moviedetail"
           component={MovieDetail}
           title="电影详情"
-          renderRightButton={<Image style={{width:20,height:20,marginRight:20}} source={require('./images/share.png')}></Image>} />
+          renderRightButton={<Image style={{ width: 20, height: 20, marginRight: 20 }} source={require('./images/share.png')}></Image>} />
       </Stack>
     </Router>
   }

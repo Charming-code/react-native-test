@@ -70,7 +70,7 @@ export default class MovieDetail extends Component {
                 {this.state.movieInfo.genres[2]==undefined?'':'/'+this.state.movieInfo.genres[2]}
               </Text>
               <Text>
-                上映时间：{this.state.movieInfo.mainland_pubdate}({this.state.movieInfo.countries})
+                上映时间：{this.state.movieInfo.mainland_pubdate}({this.state.movieInfo.countries[0]})
               </Text>
               <Text>
                 片长：{this.state.movieInfo.durations[0] == undefined ? '未知' : this.state.movieInfo.durations[0]}
