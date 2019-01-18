@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import { View, Image, Text, StyleSheet, ScrollView, Dimensions } from 'react-native'
-import { bold } from 'ansi-colors';
 
 import MovieComments from './MovieComments'
 
@@ -66,12 +65,13 @@ export default class MovieDetail extends Component {
                   fontWeight: 'bold',
                   marginTop: 20,
                   marginBottom: 20,
-                  color: '#494949'
+                  color: '#494949',
+                  width:width*3/5
                 }}>{this.state.movieInfo.title}</Text>
                 <Text>
                   {this.state.movieInfo.year}/
                 {this.state.movieInfo.genres[0]}
-                  {this.state.movieInfo.genres[1] == undefined ? '' : '/' + this.state.movieInfo.genres[2]}
+                  {this.state.movieInfo.genres[1] == undefined ? '' : '/' + this.state.movieInfo.genres[1]}
                   {this.state.movieInfo.genres[2] == undefined ? '' : '/' + this.state.movieInfo.genres[2]}
                 </Text>
                 <Text>

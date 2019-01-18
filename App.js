@@ -1,18 +1,11 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, TextInput } from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import Home from './components/tabbars/Hone';
 import Me from './components/tabbars/Me';
 import Find from './components/tabbars/Find';
+//导入导航栏组件
 import TabNavigator from 'react-native-tab-navigator';
-
+//导入Icon组件
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 
